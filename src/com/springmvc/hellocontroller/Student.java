@@ -1,15 +1,24 @@
 package com.springmvc.hellocontroller;
 
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Date;
+
 
 /**
  * Created by ankitgupta on 5/8/17.
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Student {
 
     private String studentName;
+
+    @Size(min=2, max=30, message = "Student Hobby should be between {min} and {max}")
     private String studentHobby;
+
     private Long studentMobile;
     private Date studentDob;
     private ArrayList<String> studentSkills;

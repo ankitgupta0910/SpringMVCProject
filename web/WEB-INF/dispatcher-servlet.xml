@@ -28,8 +28,16 @@
 
     <context:component-scan base-package="com.springmvc.hellocontroller"></context:component-scan>
 
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven />
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/admissionForm.html"/>
+            <bean class="com.springmvc.hellocontroller.DayOfWeeKBasedAccessInterceptor"></bean>
+        </mvc:interceptor>
+
+    </mvc:interceptors>
+    
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
         <property name="prefix">
@@ -39,7 +47,19 @@
         <property name="suffix">
             <value>.jsp</value>
         </property>
-
     </bean>
+
+    <!--<bean id="simpleMappingExceptionResolver"-->
+            <!--class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+        <!--<property name="exceptionMappings">-->
+            <!--<map>-->
+                <!--<entry key="NullPointerException" value="NullPointerException"></entry>-->
+                <!--<entry key="IOException" value="IOException"></entry>-->
+            <!--</map>-->
+        <!--</property>-->
+        <!---->
+        <!--<property name="defaultErrorView" value="Exception"></property>-->
+        <!--<property name="warnLogCategory" value="MVCLogger"></property>-->
+    <!--</bean>-->
 
 </beans>

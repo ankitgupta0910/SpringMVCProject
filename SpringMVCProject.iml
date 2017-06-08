@@ -29,5 +29,7 @@
     <orderEntry type="library" name="Spring Batch-2.2.6" level="project" />
     <orderEntry type="library" name="Spring MVC-4.3.8.RELEASE" level="project" />
     <orderEntry type="library" name="Spring Web Services-2.0.2" level="project" />
+    <orderEntry type="library" name="jackson-databind-2.8.8" level="project" />
+    <orderEntry type="library" name="validation-api-1.1.0.Final" level="project" />
   </component>
 </module>
